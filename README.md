@@ -1,46 +1,72 @@
-# Astro Starter Kit: Basics
+# Astro + Svelte Template
 
-```sh
-pnpm create astro@latest -- --template basics
+Base template for projects with Astro v5 and Svelte 5, following Clean Architecture principles.
+
+## Tech Stack
+
+- **Framework**: Astro v5 + Svelte 5
+- **Styling**: TailwindCSS v4
+- **Language**: TypeScript
+- **Testing**: Vitest (unit) + Playwright (e2e)
+- **Linting**: ESLint + Prettier
+- **Hooks**: Husky + lint-staged
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Available Scripts
 
-## 🚀 Project Structure
+| Command               | Description                |
+| --------------------- | -------------------------- |
+| `npm run dev`         | Start development server   |
+| `npm run build`       | Run typecheck and build    |
+| `npm run preview`     | Preview production build   |
+| `npm run lint`        | Run ESLint                 |
+| `npm run format`      | Format code with Prettier  |
+| `npm run test`        | Run unit tests (Vitest)    |
+| `npm run test:run`    | Run unit tests once        |
+| `npm run test:e2e`    | Run e2e tests (Playwright) |
+| `npm run test:e2e:ui` | Run e2e tests with UI      |
+| `npm run check`       | Run Astro typecheck        |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project Structure
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```
+src/
+├── components/     # UI Components (Astro/Svelte)
+├── core/           # Shared utilities, types, constants
+├── layouts/        # Astro layouts
+├── pages/          # Astro routes
+└── styles/         # Global styles
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Architecture
 
-## 🧞 Commands
+- **UI Layer**: `components/`
+- **Domain Layer**: `core/`, `stores/`
+- **Framework**: `pages/`, `layouts/`
+- **Islands**: Svelte components with partial hydration
 
-All commands are run from the root of the project, from a terminal:
+## Pre-commit Hooks
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+The project uses Husky to run linting before each commit:
 
-## 👀 Want to learn more?
+- ESLint + Prettier on `.js`, `.ts`, `.astro`, `.svelte` files
+- Prettier on `.css`, `.json`, `.md`, `.html` files
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## License
+
+MIT
