@@ -1,8 +1,12 @@
 {
-  "name": "alexcoronell-dev",
+  "name": "astro-svelta-base-template",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
@@ -17,11 +21,20 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.0",
     "@astrojs/svelte": "^7.2.5",
-    "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.17.1",
     "astro-compressor": "^1.3.0",
     "astro-min": "^1.3.1",
     "astro-seo": "^1.1.0",
+    "svelte": "^5.53.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "@playwright/test": "^1.58.2",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/svelte": "^5.3.1",
     "eslint": "^10.0.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-js": "github:eslint/js",
@@ -36,11 +49,12 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-svelte": "^3.5.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "svelte": "^5.53.7",
     "svelte-eslint-parser": "^1.6.0",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.1"
+    "typescript-eslint": "^8.56.1",
+    "vite": "^6.4.1",
+    "vitest": "^4.0.18"
   },
   "lint-staged": {
     "*.{js,ts,astro,svelte}": [
@@ -50,9 +64,5 @@
     "*.{css,json,md,html}": [
       "prettier --write"
     ]
-  },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.56.1",
-    "@typescript-eslint/parser": "^8.56.1"
   }
 }

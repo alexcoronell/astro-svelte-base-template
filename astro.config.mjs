@@ -64,7 +64,7 @@ function minExcludeSvelte() {
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://alexcoronell.dev",
+  site: "https://comain.com",
   output: "static",
   vite: {
     plugins: [tailwindcss()],
